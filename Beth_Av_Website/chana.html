@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Easton Shul</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Material Symbols (Google Icons) -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="inner-page">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white moral-navbar">
+        <div class="container">
+
+            <!-- Left: Brand -->
+            <a class="navbar-brand d-flex align-items-center gap-2 moral-brand" href="#">
+                <!-- Replace with your logo image if you have one -->
+                <span class="moral-mark" aria-hidden="true">
+                    <!-- simple heart-ish icon placeholder -->
+                    <a href="index.html" class="navbar-logo-link" aria-label="Go to homepage">
+                         <img src="images/easton_shul_logo.png" alt="Easton Shut Logo" class="easton-logo" />
+                    </a>
+                </span>
+            </a>
+
+            <!-- Mobile toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#moralNav"
+                aria-controls="moralNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Center links + Right CTA -->
+            <div class="collapse navbar-collapse" id="moralNav">
+                <!-- Center -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 moral-nav-links">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+
+                <!-- Right -->
+                <div class="d-flex">
+                    <a href="#" class="btn moral-cta-btn">
+                        <span>Donate Now</span>
+                        <span class="material-symbols-outlined moral-cta-icon" aria-hidden="true">
+                            arrow_outward
+                        </span>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+    <!-- TEAM MEMBER PROFILE -->
+    <section class="member-section">
+        <div class="container">
+            <a href="about.html" class="member-back">
+                <span class="material-symbols-outlined">arrow_back</span>
+                <span class="member-back-text">Back to About</span>
+            </a>
+
+
+            <div class="row g-5 align-items-start member-grid">
+
+                <!-- Left: Image -->
+                <div class="col-lg-6">
+                    <div class="member-photo-card">
+                        <img src="images/chana2.jpeg" alt="Olga Oretsky" class="member-photo" />
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="col-lg-6">
+                    <div class="member-content">
+
+                        <h1 class="member-name">Chana Yagod</h1>
+                        <div class="member-role">Community Support Coordinator</div>
+
+                        <p class="member-bio">
+                            Chana Yagod serves as a full-time mashgicha at a nursing home in Harrisburg, Pennsylvania, where she helps oversee kosher standards and community life. A dedicated teacher of Torah, she also leads a weekly Pirkei Avos class and enjoys sharing the depth and wisdom of Jewish learning with others.
+                        </p>
+
+                        <p class="member-bio">
+                            At Beth Avraham, Chanie actively supports synagogue life through hospitality, volunteer coordination, design work, and community projects. Known for her curiosity, energy, and love of learning, she encourages others to explore Torah’s many layers while building a warm, welcoming environment for everyone who walks through the shul’s doors.
+                        </p>
+
+                        <!-- Divider spacing like screenshot -->
+                        <div class="member-spacer"></div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- CTA: GET INVOLVED -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <!-- Left: Images -->
+                <div class="col-lg-8">
+                    <div class="cta-marquee" aria-label="Volunteer photos">
+                        <div class="cta-marquee-track">
+                            <!-- Set A -->
+                            <div class="cta-img-card">
+                                <img src="images/group.jpeg" alt="Group Picture of Easton Shul" class="cta-img">
+                            </div>
+                            <div class="cta-img-card">
+                                <img src="images/sam_group.jpg" alt="Sam Visits Easton Shul" class="cta-img">
+                            </div>
+                            <div class="cta-img-card">
+                                <img src="images/food_group_pic.jpeg" alt="Easton Shul Kiddush Picture" class="cta-img">
+                            </div>
+
+                            <!-- Set B (duplicate for seamless loop) -->
+                            <div class="cta-img-card" aria-hidden="true">
+                                <img src="images/group.jpeg" alt="" class="cta-img">
+                            </div>
+                            <div class="cta-img-card" aria-hidden="true">
+                                <img src="images/sam_group.jpg" alt="" class="cta-img">
+                            </div>
+                            <div class="cta-img-card" aria-hidden="true">
+                                <img src="images/food_group_pic.jpeg" alt="" class="cta-img">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right: Content -->
+                <div class="col-lg-4">
+                    <div class="cta-content">
+
+                        <div class="cta-kicker">
+                            <img src="images/circle.svg" alt="" class="who-icon" />
+                            <span class="cta-kicker-text">SUPPORT BETH AVRAHAM</span>
+                        </div>
+
+                        <h2 class="cta-title">Help Our Community Thrive</h2>
+
+                        <p class="cta-text">
+                            From daily tefillah to youth programs and holiday celebrations, your generosity keeps our
+                            synagogue active and welcoming year-round.
+                        </p>
+
+                        <div class="cta-actions">
+                            <a href="#" class="btn cta-btn">
+                                <span>Support the Shul</span>
+                                <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+                            </a>
+
+                            <div class="cta-avatars" aria-label="Volunteer avatars">
+                                <img src="images/guy3.png" alt="Volunteer 1" class="cta-avatar">
+                                <img src="images/girl2.png" alt="Volunteer 2" class="cta-avatar">
+                                <img src="images/guy4.png" alt="Volunteer 3" class="cta-avatar">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="row footer-top gy-4 align-items-stretch">
+
+                <!-- LEFT: Brand + contact + CTA -->
+                <div class="col-lg-5 d-flex flex-column">
+                    <a href="#" class="footer-brand">
+                        <img src="images/moral_white.svg" alt="Moral" class="footer-logo">
+                    </a>
+
+                    <p class="footer-desc">
+                        Join us in our journey to make a difference. Together, we can create lasting
+                        change and unlock the potential of every person, regardless of their circumstances.
+                    </p>
+
+                    <!-- Contact -->
+                    <div class="row footer-contact gx-4">
+                        <!-- Email -->
+                        <div class="col-sm-6">
+                            <div class="footer-contact-block">
+                                <div class="footer-contact-head">
+                                    <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+                                    <span class="footer-contact-title">Email:</span>
+                                </div>
+                                <div class="footer-contact-rule"></div>
+                                <a class="footer-contact-value" href="mailto:info@example.com">info@example.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="col-sm-6">
+                            <div class="footer-contact-block">
+                                <div class="footer-contact-head">
+                                    <span class="material-symbols-outlined" aria-hidden="true">call</span>
+                                    <span class="footer-contact-title">Phone:</span>
+                                </div>
+                                <div class="footer-contact-rule"></div>
+                                <a class="footer-contact-value" href="tel:+14805550103">(480) 555-0103</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA (stays left) -->
+                    <a href="#" class="btn footer-cta">
+                        <span>Join us</span>
+                        <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+                    </a>
+                </div>
+
+                <!-- MIDDLE: Link columns -->
+                <div class="col-lg-5 footer-links-col footer-links-wide">
+                    <div class="row footer-links gy-3">
+                        <div class="col-6 col-md-4">
+                            <ul class="footer-list">
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Causes</a></li>
+                                <li><a href="#">Donate</a></li>
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-md-4">
+                            <ul class="footer-list">
+                                <li><a href="#">Events</a></li>
+                                <li><a href="#">Volunteers</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Gallery</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Social icons (right side, aligned with CTA using flex) -->
+                <div class="col-lg-2 d-flex justify-content-lg-end align-items-end footer-social-col">
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-btn" aria-label="X">
+                            <img src="images/x-logo.svg" alt="">
+                        </a>
+                        <a href="#" class="footer-social-btn" aria-label="Facebook">
+                            <img src="images/f-logo.svg" alt="">
+                        </a>
+                        <a href="#" class="footer-social-btn" aria-label="YouTube">
+                            <img src="images/youtube-logo.svg" alt="">
+                        </a>
+                        <a href="#" class="footer-social-btn" aria-label="Instagram">
+                            <img src="images/insta-logo.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <!-- Bottom bar -->
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2026 Beth Avraham. All rights reserved.</div>
+                <div class="footer-credit">Designed by Focal Truth</div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

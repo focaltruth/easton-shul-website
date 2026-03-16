@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Easton Shul</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Material Symbols (Google Icons) -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white moral-navbar">
+        <div class="container">
+
+            <!-- Left: Brand -->
+            <a class="navbar-brand d-flex align-items-center gap-2 moral-brand" href="#">
+                <!-- Replace with your logo image if you have one -->
+                <span class="moral-mark" aria-hidden="true">
+                    <!-- simple heart-ish icon placeholder -->
+                    <img src="images/easton_shul_logo.png" alt="Easton Shul Logo" class="easton-logo" />
+                </span>
+            </a>
+
+            <!-- Mobile toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#moralNav"
+                aria-controls="moralNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Center links + Right CTA -->
+            <div class="collapse navbar-collapse" id="moralNav">
+                <!-- Center -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 moral-nav-links">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+
+                <!-- Right -->
+                <div class="d-flex">
+                    <a href="#" class="btn moral-cta-btn">
+                        <span>Donate Now</span>
+                        <span class="material-symbols-outlined moral-cta-icon" aria-hidden="true">
+                            arrow_outward
+                        </span>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center hero-row">
+
+                <!-- Left: Text -->
+                <div class="col-lg-6 hero-left">
+                    <h1 class="hero-title">
+                        Make Beth Avraham Your Jewish Home
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Where every Jew feels at home — blending Torah, community, and warmth at Beth Avraham.
+                    </p>
+
+                    <a href="#" class="btn hero-cta">
+                        <span>RSVP for Shabbat</span>
+                        <span class="material-symbols-outlined hero-cta-icon" aria-hidden="true">arrow_outward</span>
+                    </a>
+                </div>
+
+                <!-- Right: Image -->
+                <div class="col-lg-6 hero-right">
+                    <div class="hero-image-card">
+                        <img src="images/beth_building.png" alt="Beth Avraham" class="hero-image" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO WE ARE -->
+    <section class="who-section">
+        <div class="container who-container">
+            <div class="row align-items-center g-5">
+
+                <!-- Left: Images -->
+                <div class="col-lg-6">
+                    <div class="who-images">
+                        <!-- Back image -->
+                        <div class="who-img-card who-img-back">
+                            <img src="images/siddur.jpg" alt="Torah study" class="who-img" />
+                        </div>
+
+                        <!-- Front image -->
+                        <div class="who-img-card who-img-front">
+                            <img src="images/torah.jpg" alt="Reading Torah" class="who-img" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="col-lg-6 d-flex justify-content-lg-end">
+                    <div class="who-content">
+
+                        <div class="who-kicker">
+                            <img src="images/circle.svg" alt="" class="who-icon" />
+                            <span class="who-kicker-text">WHO WE ARE</span>
+                        </div>
+
+                        <h2 class="who-title">Easton’s Center for Torah</h2>
+
+                        <div class="who-body">
+                            <p>
+                                Beth Avraham is a Modern Orthodox synagogue in Easton, Pennsylvania, where tradition
+                                meets warmth and
+                                community. Our services blend Ashkenazi and Sephardi minhagim, reflecting the rich
+                                diversity of our members
+                                from around the world.
+                            </p>
+
+                            <p>
+                                Whether you are Sephardi, Ashkenazi, Mizrachi, Bukharian, or Syrian, you’re welcome to
+                                lead and pray
+                                according to your customs. Every voice and tradition adds to the beauty of our shared
+                                tefillah.
+                            </p>
+
+                            <p>
+                                At Beth Avraham, everyone belongs. We value connection, learning, and
+                                inclusion—reserving a board seat for
+                                younger members and welcoming new faces with genuine small-town friendliness. Come be
+                                part of our growing
+                                community.
+                            </p>
+                        </div>
+
+                        <a href="#" class="btn who-btn">
+                            <span>About us</span>
+                            <span class="material-symbols-outlined who-btn-icon" aria-hidden="true">arrow_outward</span>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE SCHEDULE -->
+    <section class="schedule-section">
+        <div class="container">
+
+            <!-- Header -->
+            <h2 class="schedule-title text-center">
+                This Week’s Service Schedule
+            </h2>
+
+            <div class="row schedule-grid">
+
+                <!-- Friday -->
+                <div class="col-lg-4 schedule-col">
+                    <h5 class="schedule-heading">FRIDAY SERVICE</h5>
+
+                    <div class="schedule-item">
+                        <div class="schedule-date">
+                            <div class="schedule-date-top">JANUARY</div>
+                            <div class="schedule-date-day">23</div>
+                            <div class="schedule-date-bottom">FRIDAY</div>
+                        </div>
+
+
+                        <div class="schedule-info">
+                            <strong>Kabbalat Shabbat</strong>
+                            <div class="schedule-time">5:45 pm – 7:30 pm</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Saturday -->
+                <div class="col-lg-4 schedule-col schedule-divider">
+                    <h5 class="schedule-heading">SATURDAY SERVICES</h5>
+
+                    <div class="schedule-item">
+                        <div class="schedule-date">
+                            <div class="schedule-date-top">JANUARY</div>
+                            <div class="schedule-date-day">24</div>
+                            <div class="schedule-date-bottom">SATURDAY</div>
+                        </div>
+                        <div class="schedule-info">
+                            <strong>Shacharis</strong>
+                            <div class="schedule-time">9:00 am – 11:00 am</div>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-date">
+                            <div class="schedule-date">
+                                <div class="schedule-date-top">JANUARY</div>
+                                <div class="schedule-date-day">24</div>
+                                <div class="schedule-date-bottom">SATURDAY</div>
+                            </div>
+                        </div>
+
+                        <div class="schedule-info">
+                            <strong>Mincha & Maariv</strong>
+                            <div class="schedule-time">6:30 pm – 7:00 pm</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Morning Minyan -->
+                <div class="col-lg-4 schedule-col schedule-divider">
+                    <h5 class="schedule-heading">WANT TO COME FOR SHABBAT?</h5>
+
+                    <p class="schedule-text">
+                        If you want to join us for services, please contact us at:
+                        <a href="mailto:rabbiyagod1@gmail.com">rabbiyagod1@gmail.com</a>.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="schedule-footer text-center">
+                <p>We follow Rabbeinu Tam time (72 minutes). Click here to learn more about the weekly schedule
+                </p>
+
+                <div class="schedule-buttons">
+                    <a href="#" class="btn schedule-btn">View Calendar</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section class="events-section">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="events-header">
+                <div class="events-kicker">
+                    <!-- replace this with your SVG if you want -->
+                    <img src="images/circle.svg" alt="" class="who-icon" />
+                    <span class="events-kicker-text">BETH AVRAHAM</span>
+                </div>
+
+                <h2 class="events-title">Our Events</h2>
+            </div>
+
+            <!-- Grid -->
+            <div class="row g-4 events-grid">
+                <!-- Card 1 -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="event-card">
+                        <div class="event-img-wrap">
+                            <img src="images/hanukkah_celebration.jpeg" alt="Hanukkah Celebration" class="event-img">
+                        </div>
+
+                        <h3 class="event-name">Hanukkah Celebration - Dec 14</h3>
+
+                        <a href="#" class="event-link">
+                            <span>Learn More</span>
+                            <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+                        </a>
+                    </article>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="event-card">
+                        <div class="event-img-wrap">
+                            <img src="images/shabbaton.jpeg" alt="December Shabbatons" class="event-img">
+                        </div>
+
+                        <h3 class="event-name">December Shabbatons</h3>
+
+                        <a href="#" class="event-link">
+                            <span>Learn More</span>
+                            <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+                        </a>
+                    </article>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="event-card">
+                        <div class="event-img-wrap">
+                            <img src="images/study.png" alt="Study" class="event-img">
+                        </div>
+
+                        <h3 class="event-name">Study Time</h3>
+
+                        <a href="#" class="event-link">
+                            <span>Learn More</span>
+                            <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+                        </a>
+                    </article>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="event-card">
+                        <div class="event-img-wrap">
+                            <img src="images/upcoming.jpeg" alt="Upcoming Events" class="event-img">
+                        </div>
+
+                        <h3 class="event-name">Upcoming Events</h3>
+
+                        <a href="#" class="event-link">
+                            <span>Learn More</span>
+                            <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div class="container">
+
+            <div class="testimonials-header">
+                <div>
+                    <div class="testimonials-kicker">
+                        <img src="images/circle.svg" alt="" class="who-icon" />
+                        <span class="testimonials-kicker-text">TESTIMONIALS</span>
+                    </div>
+
+                    <h2 class="testimonials-title">What Our Community Is Saying</h2>
+                </div>
+
+                <!-- Controls NOW WORK -->
+                <div class="testimonials-controls">
+                    <button class="testimonials-control-btn" type="button" data-bs-target="#testimonialsCarousel"
+                        data-bs-slide="prev" aria-label="Previous testimonial">
+                        <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+                    </button>
+
+                    <button class="testimonials-control-btn" type="button" data-bs-target="#testimonialsCarousel"
+                        data-bs-slide="next" aria-label="Next testimonial">
+                        <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carousel -->
+            <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner">
+
+                    <!-- SLIDE 1 (2 cards on desktop, 1 on mobile) -->
+                    <div class="carousel-item active">
+                        <div class="row g-4">
+                            <div class="col-12 col-lg-6">
+                                <article class="testimonial-card">
+                                    <div class="testimonial-top">
+                                        <div class="testimonial-avatar">
+                                            <img src="images/guy.jpg" alt="Courtney Henry" />
+                                        </div>
+                                        <div class="testimonial-person">
+                                            <div class="testimonial-name">Chaim G</div>
+                                            <div class="testimonial-location">Easton, PA</div>
+                                        </div>
+                                    </div>
+                                    <p class="testimonial-quote">
+                                        <span class="testimonial-highlight">
+                                            This is a great place for a young Jewish man trying to find his way in the world.
+                                        </span>
+                                    </p>
+                                </article>
+                            </div>
+
+                            <div class="col-12 col-lg-6">
+                                <article class="testimonial-card">
+                                    <div class="testimonial-top">
+                                        <div class="testimonial-avatar">
+                                            <img src="images/milton.jpg" alt="Ronald Richards" />
+                                        </div>
+                                        <div class="testimonial-person">
+                                            <div class="testimonial-name">Milton Torres Ceron</div>
+                                            <div class="testimonial-location">Austin,TX</div>
+                                        </div>
+                                    </div>
+                                    <p class="testimonial-quote">
+                                        The Rabbi is very balanced in his halachic outlook.
+                                        <span class="testimonial-highlight">
+                                            The people are amazing and warm. Also the food is delicious!
+                                        </span>
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 2 (replace with your next 2 testimonials) -->
+                    <div class="carousel-item">
+                        <div class="row g-4">
+                            <div class="col-12 col-lg-6">
+                                <article class="testimonial-card">
+                                    <div class="testimonial-top">
+                                        <div class="testimonial-avatar">
+                                            <img src="images/guy2.jpg" alt="Wade Warren" />
+                                        </div>
+                                        <div class="testimonial-person">
+                                            <div class="testimonial-name">Avrumy S.</div>
+                                            <div class="testimonial-location">Easton, PA</div>
+                                        </div>
+                                    </div>
+                                    <p class="testimonial-quote">
+                                        Sometimes in other places, the chagim can be stressful because you have to worry about doing everything right,
+                                        <span class="testimonial-highlight">
+                                            but here it feels calm and laid back!
+                                        </span>
+                                    </p>
+                                </article>
+                            </div>
+
+                            <div class="col-12 col-lg-6">
+                                <article class="testimonial-card">
+                                    <div class="testimonial-top">
+                                        <div class="testimonial-avatar">
+                                            <img src="images/girl.jpg" alt="Kristin Watson" />
+                                        </div>
+                                        <div class="testimonial-person">
+                                            <div class="testimonial-name">Kristin Watson</div>
+                                            <div class="testimonial-location">California, USA</div>
+                                        </div>
+                                    </div>
+                                    <p class="testimonial-quote">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur
+                                        adipiscing elit quisque faucibus ex.
+                                        <span class="testimonial-highlight">
+                                            Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
+                                        </span>
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BLOGS -->
+    <section class="blogs-section">
+        <div class="container">
+
+            <div class="blogs-header">
+                <div>
+                    <div class="blogs-kicker">
+                        <img src="images/circle.svg" alt="" class="who-icon" />
+                        <span class="blogs-kicker-text">OUR BLOGS</span>
+                    </div>
+                    <h2 class="blogs-title">News &amp; Articles</h2>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Blog Card 1 -->
+                <div class="col-12 col-lg-4">
+                    <article class="blog-card">
+                        <div class="blog-img-wrap">
+                            <img src="images/beth_building.png" alt="Easton Shul Building" class="blog-img">
+                        </div>
+
+                        <div class="blog-body">
+                            <div class="blog-meta-top">
+                                <span>By Dassi Lewis </span>
+                                <span class="blog-meta-divider">|</span>
+                                <span>Jan 16, 2025</span>
+                            </div>
+
+                            <h3 class="blog-headline">If You Build It, They Will Come: Rabbi Isaac Yagod’s Journey to Bring an Orthodox Community to Easton, PA</h3>
+
+                            <div class="blog-footer">
+                                <span class="blog-tag">Community</span>
+
+                                <a href="#" class="blog-link">
+                                    <span>Read Article</span>
+                                    <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="col-12 col-lg-4">
+                    <article class="blog-card">
+                        <div class="blog-img-wrap">
+                            <img src="images/torah.jpg" alt="Volunteerism impact" class="blog-img">
+                        </div>
+
+                        <div class="blog-body">
+                            <div class="blog-meta-top">
+                                <span>By Dassi Lewis</span>
+                                <span class="blog-meta-divider">|</span>
+                                <span>Dec 18, 2025</span>
+                            </div>
+
+                            <h3 class="blog-headline">Easton, Pennsylvania: Inside the Growth of a New Jewish Community</h3>
+
+                            <div class="blog-footer">
+                                <span class="blog-tag">Community</span>
+
+                                <a href="#" class="blog-link">
+                                    <span>Read Article</span>
+                                    <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="col-12 col-lg-4">
+                    <article class="blog-card">
+                        <div class="blog-img-wrap">
+                            <img src="images/milton_art.jpg" alt="Divine Companionship Thubmail" class="blog-img">
+                        </div>
+
+                        <div class="blog-body">
+                            <div class="blog-meta-top">
+                                <span>By Milton Torres-Ceron </span>
+                                <span class="blog-meta-divider">|</span>
+                                <span>Sep 30, 2025</span>
+                            </div>
+
+                            <h3 class="blog-headline">Divine Companionship in the Tokhahah: A Textual Analysis</h3>
+
+                            <div class="blog-footer">
+                                <span class="blog-tag">Volunteer Management</span>
+
+                                <a href="#" class="blog-link">
+                                    <span>Read Article</span>
+                                    <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="blogs-bottom">
+                <a href="#" class="btn blogs-cta">
+                    <span>View All Blogs</span>
+                    <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CTA: GET INVOLVED -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <!-- Left: Images -->
+                <div class="col-lg-8">
+                    <div class="cta-marquee" aria-label="Volunteer photos">
+                        <div class="cta-marquee-track">
+                            <!-- Set A -->
+                            <div class="cta-img-card">
+                                <img src="images/group.jpeg" alt="Group Picture of Easton Shul" class="cta-img">
+                            </div>
+                            <div class="cta-img-card">
+                                <img src="images/sam_group.jpg" alt="Sam Visits Easton Shul" class="cta-img">
+                            </div>
+                            <div class="cta-img-card">
+                                <img src="images/food_group_pic.jpeg" alt="Easton Shul Kiddush Picture" class="cta-img">
+                            </div>
+
+                            <!-- Set B (duplicate for seamless loop) -->
+                            <div class="cta-img-card" aria-hidden="true">
+                                <img src="images/group.jpeg" alt="" class="cta-img">
+                            </div>
+                            <div class="cta-img-card" aria-hidden="true">
+                                <img src="images/sam_group.jpg" alt="" class="cta-img">
+                            </div>
+                            <div class="cta-img-card" aria-hidden="true">
+                                <img src="images/food_group_pic.jpeg" alt="" class="cta-img">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right: Content -->
+                <div class="col-lg-4">
+                    <div class="cta-content">
+
+                        <div class="cta-kicker">
+                            <img src="images/circle.svg" alt="" class="who-icon" />
+                            <span class="cta-kicker-text">SUPPORT BETH AVRAHAM</span>
+                        </div>
+
+                        <h2 class="cta-title">Help Our Community Thrive</h2>
+
+                        <p class="cta-text">
+                            From daily tefillah to youth programs and holiday celebrations, your generosity keeps our synagogue active and welcoming year-round.
+                        </p>
+
+                        <div class="cta-actions">
+                            <a href="#" class="btn cta-btn">
+                                <span>Support the Shul</span>
+                                <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+                            </a>
+
+                            <div class="cta-avatars" aria-label="Volunteer avatars">
+                                <img src="images/guy3.png" alt="Volunteer 1" class="cta-avatar">
+                                <img src="images/girl2.png" alt="Volunteer 2" class="cta-avatar">
+                                <img src="images/guy4.png" alt="Volunteer 3" class="cta-avatar">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="row footer-top gy-4 align-items-stretch">
+
+                <!-- LEFT: Brand + contact + CTA -->
+                <div class="col-lg-5 d-flex flex-column">
+                    <a href="#" class="footer-brand">
+                        <img src="images/moral_white.svg" alt="Moral" class="footer-logo">
+                    </a>
+
+                    <p class="footer-desc">
+                        Join us in our journey to make a difference. Together, we can create lasting
+                        change and unlock the potential of every person, regardless of their circumstances.
+                    </p>
+
+                    <!-- Contact -->
+                    <div class="row footer-contact gx-4">
+                        <!-- Email -->
+                        <div class="col-sm-6">
+                            <div class="footer-contact-block">
+                                <div class="footer-contact-head">
+                                    <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+                                    <span class="footer-contact-title">Email:</span>
+                                </div>
+                                <div class="footer-contact-rule"></div>
+                                <a class="footer-contact-value" href="mailto:info@example.com">info@example.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="col-sm-6">
+                            <div class="footer-contact-block">
+                                <div class="footer-contact-head">
+                                    <span class="material-symbols-outlined" aria-hidden="true">call</span>
+                                    <span class="footer-contact-title">Phone:</span>
+                                </div>
+                                <div class="footer-contact-rule"></div>
+                                <a class="footer-contact-value" href="tel:+14805550103">(480) 555-0103</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA (stays left) -->
+                    <a href="#" class="btn footer-cta">
+                        <span>Join us</span>
+                        <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+                    </a>
+                </div>
+
+                <!-- MIDDLE: Link columns -->
+                <div class="col-lg-5 footer-links-col footer-links-wide">
+                    <div class="row footer-links gy-3">
+                        <div class="col-6 col-md-4">
+                            <ul class="footer-list">
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Causes</a></li>
+                                <li><a href="#">Donate</a></li>
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-md-4">
+                            <ul class="footer-list">
+                                <li><a href="#">Events</a></li>
+                                <li><a href="#">Volunteers</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Gallery</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Social icons (right side, aligned with CTA using flex) -->
+                <div class="col-lg-2 d-flex justify-content-lg-end align-items-end footer-social-col">
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-btn" aria-label="X">
+                            <img src="images/x-logo.svg" alt="">
+                        </a>
+                        <a href="#" class="footer-social-btn" aria-label="Facebook">
+                            <img src="images/f-logo.svg" alt="">
+                        </a>
+                        <a href="#" class="footer-social-btn" aria-label="YouTube">
+                            <img src="images/youtube-logo.svg" alt="">
+                        </a>
+                        <a href="#" class="footer-social-btn" aria-label="Instagram">
+                            <img src="images/insta-logo.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <!-- Bottom bar -->
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2026 Beth Avraham. All rights reserved.</div>
+                <div class="footer-credit">Designed by Focal Truth</div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
