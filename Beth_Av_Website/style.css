@@ -1122,25 +1122,6 @@ html, body {
   color: #ffffff;
 }
 
-/* overlapping avatars */
-.cta-avatars {
-  display: flex;
-  align-items: center;
-}
-
-.cta-avatar {
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  object-fit: cover;
-  border: 2px solid #f4efe7;
-  margin-left: -10px;
-}
-
-.cta-avatar:first-child {
-  margin-left: 0;
-}
-
 /* =========================
    RESPONSIVE
 ========================= */
