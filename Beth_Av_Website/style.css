@@ -74,6 +74,31 @@ html, body {
   transform: translateY(-1px);
 }
 
+.hero-cta-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap; /* helps on mobile */
+}
+
+.hero-cta-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 12px 18px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.hero-cta-outline:hover,
+.hero-cta-outline:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
 .inner-page .moral-navbar {
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
@@ -1160,6 +1185,10 @@ html, body {
   overflow: hidden;
 }
 
+.footer-top{
+  row-gap:32px;
+}
+
 /* Brand */
 .footer-brand {
   display: inline-flex;
@@ -1167,18 +1196,17 @@ html, body {
   gap: 10px;
   text-decoration: none;
   color: #ffffff;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .footer-logo {
-  height: 28px;
+  height: 120px;
   width: auto;
   display: block;
 }
 
 /* Description */
 .footer-desc {
-  max-width: 520px;
   margin: 0 0 20px;
   line-height: 1.6;
   color: #b29fbc;
@@ -1276,6 +1304,22 @@ html, body {
   color: #111111;
 }
 
+/* RIGHT SIDE LAYOUT (desktop) */
+.footer-right-col {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-right-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-links-col {
+ margin-bottom: 180px;
+}
+
 /* =========================
    FOOTER LINKS
 ========================= */
@@ -1298,34 +1342,6 @@ html, body {
   color: #ffffff;
   text-decoration: underline;
 }
-
-
-
-@media (min-width: 992px) {
-  /* Make the links row not add extra right inset */
-  .footer-links {
-    margin-right: 0;           /* cancel row negative margin behavior */
-    justify-content: flex-end; /* push columns to the right */
-  }
-
-  /* Remove the right padding on the LAST link column so its edge can align */
-  .footer-links > div:last-child {
-    padding-right: 0;
-  }
-
-  /* Keep your two columns tight */
-  .footer-links > div {
-    flex: 0 0 auto;
-    width: auto;
-  }
-
-  /* Use gap instead of column-gap (column-gap doesn't apply to flex reliably) */
-  .footer-links {
-    gap: 64px;
-  }
-}
-
-
 
 /* =========================
    SOCIAL ICONS (IMAGES)
@@ -1407,6 +1423,23 @@ html, body {
   }
 }
 
+@media (max-width: 991.98px) {
+  .footer-right-col {
+    justify-content: flex-start;
+  }
+
+  .footer-right-inner {
+    align-items: flex-start;
+  }
+
+  .footer-links-col {
+    margin-bottom: 32px;
+  }
+
+  .footer-list {
+    text-align: left;
+  }
+}
 
 /* =========================
    ABOUT: OUR STORY
@@ -1918,5 +1951,257 @@ html, body {
 
   .event-feature-title {
     font-size: 1.9rem;
+  }
+}
+
+/* =========================
+   CONTACT MODERN PAGE
+========================= */
+.contact-modern-section {
+  background: #ffffff;
+  padding: 90px 0 80px;
+}
+
+.contact-modern-header {
+  margin-bottom: 56px;
+}
+
+.contact-modern-title {
+  font-size: clamp(2.8rem, 5vw, 4.3rem);
+  line-height: 1.02;
+  font-weight: 400;
+  color: #0b0f14;
+  margin: 14px 0 0;
+}
+
+.contact-modern-grid {
+  align-items: start;
+}
+
+/* LEFT FORM */
+.contact-modern-form {
+  width: 100%;
+  padding-top: 0;
+}
+
+.contact-modern-field {
+  margin-bottom: 52px;
+}
+
+.contact-modern-field-full {
+  margin-bottom: 48px;
+}
+
+/* NEW: wrapper handles icon + underline */
+.contact-modern-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(11, 15, 20, 0.75);
+  padding-bottom: 6px;
+}
+
+.contact-modern-input-wrap:focus-within {
+  border-bottom-color: #2b1438;
+}
+
+.contact-modern-input-wrap .material-symbols-outlined {
+  font-size: 18px;
+  line-height: 1;
+  color: rgba(11, 15, 20, 0.65);
+  flex-shrink: 0;
+}
+
+/* input + textarea reset */
+.contact-modern-input,
+.contact-modern-textarea {
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: 1rem;
+  color: #0b0f14;
+  outline: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-modern-input::placeholder,
+.contact-modern-textarea::placeholder {
+  color: rgba(11, 15, 20, 0.72);
+}
+
+/* message field */
+.contact-modern-message-wrap {
+  margin-top: 10px;
+}
+
+.contact-modern-message-wrap .contact-modern-input-wrap {
+  align-items: flex-start;
+}
+
+.contact-modern-message-wrap .material-symbols-outlined {
+  margin-top: 2px;
+}
+
+.contact-modern-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* submit */
+.contact-modern-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.contact-modern-submit {
+  background: #351c42;
+  border: 0;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 12px 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.contact-modern-submit:hover,
+.contact-modern-submit:focus {
+  background: #2b1438;
+  color: #ffffff;
+}
+
+.contact-modern-submit .material-symbols-outlined {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* RIGHT INFO */
+.contact-modern-info {
+  padding-left: 28px;
+  padding-top: 45px;
+}
+
+.contact-modern-info-title {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.1;
+  font-weight: 400;
+  color: #0b0f14;
+  margin: 0 0 18px;
+}
+
+.contact-modern-info-text {
+  color: rgba(11, 15, 20, 0.72);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 420px;
+  margin: 0 0 52px;
+}
+
+.contact-modern-info-block {
+  margin-bottom: 34px;
+}
+
+.contact-modern-info-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #0b0f14;
+  margin-bottom: 8px;
+}
+
+.contact-modern-info-head .material-symbols-outlined {
+  font-size: 19px;
+  line-height: 1;
+  color: rgba(11, 15, 20, 0.72);
+}
+
+.contact-modern-info-line {
+  height: 1px;
+  background: rgba(11, 15, 20, 0.12);
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: none;
+}
+
+.contact-modern-info-value,
+.contact-modern-info-link {
+  margin: 0;
+  color: rgba(11, 15, 20, 0.75);
+  line-height: 1.7;
+  text-decoration: none;
+}
+
+.contact-modern-info-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* SOCIAL */
+.contact-modern-social {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 52px;
+  border: 1px solid rgba(11, 15, 20, 0.14);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.contact-modern-social-btn {
+  width: 78px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-right: 1px solid rgba(11, 15, 20, 0.14);
+  text-decoration: none;
+}
+
+.contact-modern-social-btn:last-child {
+  border-right: 0;
+}
+
+.contact-modern-social-btn img {
+  width: 15px;
+  height: 15px;
+  display: block;
+  opacity: 0.95;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 991.98px) {
+  .contact-modern-section {
+    padding: 60px 0;
+  }
+
+  .contact-modern-header {
+    margin-bottom: 34px;
+  }
+
+  .contact-modern-info {
+    padding-left: 0;
+    margin-top: 10px;
+  }
+
+  .contact-modern-info-text {
+    margin-bottom: 34px;
+  }
+
+  .contact-modern-field {
+    margin-bottom: 34px;
+  }
+
+  .contact-modern-actions {
+    justify-content: flex-start;
   }
 }
