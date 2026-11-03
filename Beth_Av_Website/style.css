@@ -398,6 +398,12 @@ html, body {
   margin-bottom: 60px;
 }
 
+.schedule-subtitle {
+  margin: -44px 0 48px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* Grid */
 .schedule-grid {
   align-items: stretch;
