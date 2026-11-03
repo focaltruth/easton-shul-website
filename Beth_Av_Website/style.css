@@ -2405,3 +2405,338 @@ html, body {
     font-size: 1.03rem;
   }
 }
+
+/* =========================
+   EVENT DETAIL PAGE
+========================= */
+.event-detail-section {
+  background: #ffffff;
+  padding: 60px 0 72px;
+}
+
+/* Photo */
+.event-detail-photo {
+  position: relative;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #e9e3da;
+}
+
+/* Image fills the box without setting its height,
+   so the details card decides how tall the row is */
+.event-detail-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: coover;
+  display: block;
+}
+
+/* Details card */
+.event-detail-card {
+  background: #f4efe7;
+  border-radius: 16px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Pill (matches the events page tag) */
+.event-detail-tag {
+  align-self: flex-start;
+  background: #ffffff;
+  color: #5d5147;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(11, 15, 20, 0.06);
+}
+
+.event-detail-title {
+  font-size: 2.25rem;
+  line-height: 1.15;
+  font-weight: 600;
+  color: #0b0f14;
+  margin: 0;
+}
+
+.event-detail-rule {
+  height: 1px;
+  background: rgba(11, 15, 20, 0.12);
+}
+
+.event-detail-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.event-detail-item .material-symbols-outlined {
+  font-size: 22px;
+  line-height: 1;
+  color: #351C42;
+}
+
+.event-detail-label {
+  font-size: 0.8rem;
+  color: rgba(11, 15, 20, 0.68);
+  margin-bottom: 4px;
+}
+
+.event-detail-value {
+  font-weight: 500;
+  color: #0b0f14;
+}
+
+.event-detail-sub {
+  color: rgba(11, 15, 20, 0.78);
+}
+
+.event-detail-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #351C42;
+}
+
+.event-detail-link:hover {
+  color: #2b1438;
+}
+
+/* Register button (same gold as Donate Now) */
+.event-register-btn {
+  background: #f3cf69;
+  border: 0;
+  color: #1a1a1a;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 14px 22px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.event-register-btn:hover,
+.event-register-btn:focus {
+  background: #eac25b;
+  color: #111111;
+}
+
+.event-detail-card .event-register-btn {
+  margin-top: 8px;
+}
+
+.event-calendar-link {
+  text-align: center;
+  color: #351C42;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.event-calendar-link:hover {
+  color: #2b1438;
+}
+
+/* About */
+.event-detail-about {
+  max-width: 760px;
+  margin-top: 64px;
+}
+
+.event-detail-about h2 {
+  font-size: clamp(1.6rem, 2.4vw, 1.9rem);
+  font-weight: 500;
+  color: #0b0f14;
+  margin: 0 0 16px;
+}
+
+.event-detail-about p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: rgba(11, 15, 20, 0.82);
+  margin: 0 0 18px;
+}
+
+.event-detail-about .event-register-btn {
+  margin-top: 10px;
+}
+
+/* Questions */
+.event-detail-questions {
+  max-width: 760px;
+  margin-top: 48px;
+  background: #f4efe7;
+  border-radius: 14px;
+  padding: 24px 28px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.event-detail-questions-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #351C42;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.event-detail-questions-icon .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.event-detail-questions h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0b0f14;
+  margin: 0 0 6px;
+}
+
+.event-detail-questions p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(11, 15, 20, 0.82);
+}
+
+.event-detail-questions a {
+  color: #351C42;
+  font-weight: 600;
+}
+
+/* =========================
+   UPCOMING EVENTS (bottom)
+========================= */
+.event-more-section {
+  background: #f4efe7;
+  padding: 72px 0 90px;
+}
+
+.event-more-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.event-more-title {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 500;
+  color: #0b0f14;
+  margin: 0;
+}
+
+.event-more-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #0b0f14;
+}
+
+.event-more-card:hover {
+  color: #0b0f14;
+}
+
+.event-more-card:hover .event-more-link {
+  text-decoration: underline;
+}
+
+.event-more-img {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #e9e3da;
+}
+
+.event-more-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.event-more-body {
+  padding: 14px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.event-more-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: rgba(11, 15, 20, 0.68);
+  margin-bottom: 8px;
+}
+
+.event-more-date .material-symbols-outlined {
+  font-size: 18px;
+  line-height: 1;
+  color: #351C42;
+}
+
+.event-more-name {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.event-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #351C42;
+}
+
+.event-more-link .material-symbols-outlined {
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .event-detail-section {
+    padding: 40px 0 56px;
+  }
+
+  .event-detail-photo {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .event-detail-card {
+    height: auto;
+  }
+
+  .event-detail-about {
+    margin-top: 48px;
+  }
+
+  .event-more-section {
+    padding: 56px 0 64px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .event-detail-title {
+    font-size: 1.9rem;
+  }
+
+  .event-detail-questions {
+    padding: 20px;
+  }
+}
