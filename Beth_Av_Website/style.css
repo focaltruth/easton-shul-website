@@ -2430,8 +2430,17 @@ html, body {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: coover;
+  object-fit: cover;
   display: block;
+}
+
+/* Flyers: show the whole flyer; the side space uses the flyer's own background color */
+.event-detail-photo.is-flyer {
+  background: var(--photo-bg, #f2f2f2);
+}
+
+.event-detail-photo.is-flyer img {
+  object-fit: contain;
 }
 
 /* Details card */
