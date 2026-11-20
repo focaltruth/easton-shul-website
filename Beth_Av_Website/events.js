@@ -61,8 +61,21 @@
     return `<span class="material-symbols-outlined" aria-hidden="true">${name}</span>`;
   }
 
+    // Clean links on the live site (/events/hanukkah-2026).
+  // Live Server can't do Netlify rewrites, so local testing uses event.html?id=...
+  const IS_LOCAL = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
+
   function detailUrl(item) {
-    return "event.html?id=" + encodeURIComponent(item.id);
+    const id = encodeURIComponent(item.id);
+    return IS_LOCAL ? "event.html?id=" + id : "/events/" + id;
+  }
+
+  // Works with both /events/hanukkah-2026 and event.html?id=hanukkah-2026
+  function currentEventId() {
+    const fromQuery = new URLSearchParams(window.location.search).get("id");
+    if (fromQuery) return fromQuery;
+    const match = window.location.pathname.match(/\/events\/([^\/]+)\/?$/);
+    return match ? decodeURIComponent(match[1]) : null;
   }
 
   function cardTitle(item) {
@@ -328,7 +341,7 @@
 
     let currentId = null;
     if (detailEl) {
-      currentId = new URLSearchParams(window.location.search).get("id");
+      currentId = currentEventId();
       const item = data.all.find(function (i) { return i.id === currentId; });
       detailEl.innerHTML = item ? detailHTML(item) : notFoundHTML();
       if (item) {

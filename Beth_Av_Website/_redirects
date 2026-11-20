@@ -1,2 +1,6 @@
-/hanukkah.html     /event.html?id=hanukkah-2026        301
-/torah-class.html  /event.html?id=gemara-avodah-zarah  301
+# Old pages go to the new clean links
+/hanukkah.html     /events/hanukkah-2026        301
+/torah-class.html  /events/gemara-avodah-zarah  301
+
+# Clean links show the event template (the address bar keeps the clean link)
+/events/:id        /event.html                  200
