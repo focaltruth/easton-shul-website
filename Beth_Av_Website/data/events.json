@@ -18,5 +18,24 @@
       "[Anything guests should know: cost or free, RSVP deadline, kosher supervision, parking.]"
     ],
     "registerUrl": ""
+  },
+  {
+    "id": "test-hanukkah-celebration-2026-12-09",
+    "title": "Test Hanukkah Celebration",
+    "tag": "Holiday",
+    "date": "2026-12-09",
+    "time": "5:00 PM – 8:00 PM",
+    "location": {
+      "type": "in-person",
+      "name": "Beth Avraham",
+      "address": "1424 Frost Hollow Road, Easton, PA 18040"
+    },
+    "image": "images/events/test-hanukkah-celebration-2026-12-09.webp",
+    "imageAlt": "Test Hanukkah Celebration",
+    "imageFit": "cover",
+    "description": [
+      "Join us for a big laughter of Hanukkah celebration and good food"
+    ],
+    "registerUrl": ""
   }
 ]
