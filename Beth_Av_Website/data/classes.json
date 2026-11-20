@@ -1,0 +1,26 @@
+[
+  {
+    "id": "gemara-avodah-zarah",
+    "title": "Gemara Avodah Zarah",
+    "shortTitle": "Torah Class",
+    "tag": "Torah Study",
+    "teacher": "Rav Yitzchok I.M. Yagod",
+    "schedule": "Every Monday",
+    "time": "8:15 PM ET",
+    "timeSub": "7:15 CT · 6:15 MT · 5:15 PT",
+    "location": {
+      "type": "online",
+      "name": "Online via Zoom",
+      "joinUrl": ""
+    },
+    "image": "images/torah_class.jpg",
+    "imageAlt": "Gemara Avodah Zarah class by Rav Yitzchok I.M. Yagod",
+    "imageFit": "contain",
+    "imageBg": "#f2f2f2",
+    "description": [
+      "Join Rav Yitzchok I.M. Yagod every Monday evening on Zoom for a class on Gemara Avodah Zarah. [One or two sentences on what the class covers and who it’s for.]",
+      "The class meets at 8:15 PM Eastern, which is 9:15 PM in Moncton (Atlantic time), 7:15 PM in Bogotá (COT), and 9:15 PM in Brasília (BRT)."
+    ],
+    "registerUrl": ""
+  }
+]

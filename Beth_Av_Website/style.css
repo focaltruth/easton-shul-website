@@ -2759,3 +2759,10 @@ html, body {
 .event-feature-img {
   object-position: center top;
 }
+
+/* Shown when there are no upcoming events */
+.events-empty {
+  font-size: 1.05rem;
+  color: rgba(11, 15, 20, 0.68);
+  margin: 0;
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "hanukkah-2026",
+    "title": "Hanukkah Celebration",
+    "tag": "Holiday",
+    "date": "2026-12-06",
+    "time": "3:00 PM – 5:00 PM",
+    "location": {
+      "type": "in-person",
+      "name": "Beth Avraham",
+      "address": "1424 Frost Hollow Road, Easton, PA 18040"
+    },
+    "image": "images/hanukkah_celebration.jpeg",
+    "imageAlt": "Hanukkah Celebration at Beth Avraham",
+    "imageFit": "cover",
+    "description": [
+      "[Two or three sentences about the celebration: menorah lighting, food, activities, and who it’s for.]",
+      "[Anything guests should know: cost or free, RSVP deadline, kosher supervision, parking.]"
+    ],
+    "registerUrl": ""
+  }
+]

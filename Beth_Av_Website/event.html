@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hanukkah Celebration | Easton Shul</title>
-    <meta name="description" content="Join Beth Avraham in Easton, PA for our Hanukkah Celebration." />
+    <title>Event | Easton Shul</title>
+    <meta name="description" content="Events and classes at Beth Avraham, Easton, PA." />
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white moral-navbar">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2 moral-brand" href="index.html">
-                <span class="moral-mark" aria-hidden="true">
+                <span class="moral-mark">
                     <img src="images/easton_shul_logo.png" alt="Easton Shul Logo" class="easton-logo" />
                 </span>
             </a>
@@ -57,91 +57,12 @@
         </div>
     </nav>
 
-    <!-- EVENT DETAIL -->
+    <!-- EVENT DETAIL (filled in by events.js) -->
     <main class="event-detail-section">
-        <div class="container">
-
-            <a href="events.html" class="member-back">
-                <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
-                <span class="member-back-text">Back to events</span>
-            </a>
-
-            <div class="row g-4 g-lg-5 align-items-stretch">
-
-                <!-- Left: Photo -->
-                <div class="col-lg-8">
-                    <div class="event-detail-photo">
-                        <img src="images/hanukkah_celebration.jpeg" alt="Hanukkah Celebration at Beth Avraham">
-                    </div>
-                </div>
-
-                <!-- Right: Details card -->
-                <div class="col-lg-4">
-                    <aside class="event-detail-card" aria-label="Event details">
-                        <span class="event-detail-tag">Holiday</span>
-                        <h1 class="event-detail-title">Hanukkah Celebration</h1>
-
-                        <div class="event-detail-rule"></div>
-
-                        <div class="event-detail-item">
-                            <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
-                            <div>
-                                <div class="event-detail-label">Date</div>
-                                <div class="event-detail-value">Sunday, December 6, 2026</div>
-                            </div>
-                        </div>
-
-                        <div class="event-detail-item">
-                            <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                            <div>
-                                <div class="event-detail-label">Time</div>
-                                <div class="event-detail-value">TBA</div>
-                            </div>
-                        </div>
-
-                        <div class="event-detail-item">
-                            <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
-                            <div>
-                                <div class="event-detail-label">Location</div>
-                                <div class="event-detail-value">Beth Avraham</div>
-                                <div class="event-detail-sub">1424 Frost Hollow Road, Easton, PA</div>
-                                <a href="https://www.google.com/maps/search/?api=1&query=Beth+Avraham+Easton+PA"
-                                    target="_blank" rel="noopener" class="event-detail-link">Get directions</a>
-                            </div>
-                        </div>
-
-                        <!-- Replace # with your registration form link -->
-                        <a href="#" class="btn event-register-btn">Register Now</a>
-                        <!-- Replace # with a calendar link, or delete this line -->
-                        <a href="#" class="event-calendar-link">Add to Calendar</a>
-                    </aside>
-                </div>
-
-            </div>
-
-            <!-- About -->
-            <section class="event-detail-about">
-                <h2>About this event</h2>
-                <p>[Two or three sentences about the celebration: menorah lighting, food, activities, and who it’s for.]</p>
-                <p>[Anything guests should know: cost or free, RSVP deadline, kosher supervision, parking.]</p>
-                <a href="#" class="btn event-register-btn">Register Now</a>
-            </section>
-
-            <!-- Questions -->
-            <section class="event-detail-questions">
-                <span class="event-detail-questions-icon">
-                    <span class="material-symbols-outlined" aria-hidden="true">mail</span>
-                </span>
-                <div>
-                    <h2>Questions?</h2>
-                    <p>Email us at <a href="mailto:eastonshul@gmail.com">eastonshul@gmail.com</a></p>
-                </div>
-            </section>
-
-        </div>
+        <div class="container" id="event-detail"></div>
     </main>
 
-    <!-- UPCOMING EVENTS -->
+    <!-- UPCOMING EVENTS (filled in by events.js; hides itself if empty) -->
     <section class="event-more-section">
         <div class="container">
 
@@ -158,25 +79,7 @@
                 </a>
             </div>
 
-            <div class="row g-4">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <a href="#" class="event-more-card">
-                        <div class="event-more-img">
-                            <img src="images/study.png" alt="Study Time">
-                        </div>
-                        <div class="event-more-body">
-                            <span class="event-more-date">
-                                <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
-                                [Date]
-                            </span>
-                            <h3 class="event-more-name">Study Time</h3>
-                            <span class="event-more-link">Learn More
-                                <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <div class="row g-4" id="upcoming-events"></div>
 
         </div>
     </section>
@@ -206,8 +109,8 @@
                         </div>
                     </div>
 
-                    <a href="#" class="btn footer-cta">
-                        <span>RSVP for Shabbat</span>
+                    <a href="contact.html" class="btn footer-cta">
+                        <span>Join us</span>
                         <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
                     </a>
                 </div>
@@ -251,6 +154,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="events.js"></script>
 </body>
 
 </html>

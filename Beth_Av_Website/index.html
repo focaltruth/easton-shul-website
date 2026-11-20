@@ -228,7 +228,6 @@
             <!-- Header -->
             <div class="events-header">
                 <div class="events-kicker">
-                    <!-- replace this with your SVG if you want -->
                     <img src="images/circle.svg" alt="" class="who-icon" />
                     <span class="events-kicker-text">BETH AVRAHAM</span>
                 </div>
@@ -236,41 +235,8 @@
                 <h2 class="events-title">Our Events</h2>
             </div>
 
-            <!-- Grid -->
-            <div class="row g-4 events-grid">
-                <!-- Card 1 -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <article class="event-card">
-                        <div class="event-img-wrap">
-                            <img src="images/torah_class.jpg" alt="Torah Class" class="event-img">
-                        </div>
-
-                        <h3 class="event-name">Torah Class</h3>
-
-                        <a href="torah-class.html" class="event-link">
-                            <span>Learn More</span>
-                            <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
-                        </a>
-                    </article>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <article class="event-card">
-                        <div class="event-img-wrap">
-                            <img src="images/hanukkah_celebration.jpeg" alt="Hanukkah Celebration" class="event-img">
-                        </div>
-
-                        <h3 class="event-name">Hanukkah Celebration</h3>
-
-                        <a href="hanukkah.html" class="event-link">
-                            <span>Learn More</span>
-                            <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
-                        </a>
-                    </article>
-                </div>
-
-            </div>
+            <!-- Cards are filled in automatically by events.js -->
+            <div class="row g-4 events-grid" id="home-events"></div>
 
         </div>
     </section>
@@ -687,6 +653,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="schedule.js"></script>
+    <script src="events.js"></script>
 </body>
 
 </html>
