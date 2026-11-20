@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Submit an Event | Easton Shul</title>
+    <!-- Internal page: keep it out of search results -->
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Material Symbols (Google Icons) -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="inner-page">
+
+    <!-- Simple header (internal page) -->
+    <nav class="navbar navbar-light bg-white moral-navbar">
+        <div class="container">
+            <a class="navbar-brand moral-brand" href="index.html">
+                <img src="images/easton_shul_logo.png" alt="Easton Shul Logo" class="easton-logo" />
+            </a>
+        </div>
+    </nav>
+
+    <main class="submit-section">
+        <div class="container">
+            <div class="submit-wrap">
+
+                <div class="events-kicker">
+                    <img src="images/circle.svg" alt="" class="who-icon" />
+                    <span class="events-kicker-text">FOR STAFF</span>
+                </div>
+                <h1 class="submit-title">Submit an Event</h1>
+                <p class="submit-intro">
+                    Fill this out for one-time events (holidays, Shabbatons, guest speakers).
+                    Weekly classes are handled separately. Every submission is reviewed before it
+                    goes on the website.
+                </p>
+
+                <!-- Success message (shown after submitting) -->
+                <div class="submit-success" id="submit-success" hidden>
+                    <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+                    <div>
+                        <h2>Thanks, your event was submitted!</h2>
+                        <p>It will appear on the website once it's been reviewed.</p>
+                        <a href="submit-event.html" class="submit-again">Submit another event</a>
+                    </div>
+                </div>
+
+                <form name="event-submission" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+                    enctype="multipart/form-data" action="/submit-event.html?sent=1" class="submit-form"
+                    id="event-form">
+
+                    <input type="hidden" name="form-name" value="event-submission" />
+                    <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+                    <!-- EVENT DETAILS -->
+                    <fieldset class="submit-card">
+                        <legend>Event details</legend>
+
+                        <div class="submit-field">
+                            <label for="title">Event name <span class="req">*</span></label>
+                            <input type="text" id="title" name="title" required maxlength="80"
+                                placeholder="e.g. Hanukkah Celebration" />
+                        </div>
+
+                        <div class="submit-field">
+                            <label for="tag">Category <span class="req">*</span></label>
+                            <select id="tag" name="tag" required>
+                                <option value="">Choose one</option>
+                                <option>Holiday</option>
+                                <option>Shabbat</option>
+                                <option>Torah Study</option>
+                                <option>Community</option>
+                                <option>Youth</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-4 submit-field">
+                                <label for="date">Date <span class="req">*</span></label>
+                                <input type="date" id="date" name="date" required />
+                            </div>
+                            <div class="col-6 col-md-4 submit-field">
+                                <label for="start_time">Start time <span class="req">*</span></label>
+                                <input type="time" id="start_time" name="start_time" required />
+                            </div>
+                            <div class="col-6 col-md-4 submit-field">
+                                <label for="end_time">End time</label>
+                                <input type="time" id="end_time" name="end_time" />
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- LOCATION -->
+                    <fieldset class="submit-card">
+                        <legend>Location</legend>
+
+                        <div class="submit-radios" role="radiogroup" aria-label="Location type">
+                            <label class="submit-radio">
+                                <input type="radio" name="location_type" value="in-person" checked />
+                                <span>In person</span>
+                            </label>
+                            <label class="submit-radio">
+                                <input type="radio" name="location_type" value="online" />
+                                <span>Online (Zoom)</span>
+                            </label>
+                        </div>
+
+                        <div id="in-person-fields">
+                            <div class="submit-field">
+                                <label for="location_name">Place name</label>
+                                <input type="text" id="location_name" name="location_name" value="Beth Avraham" />
+                            </div>
+                            <div class="submit-field">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" name="address"
+                                    value="1424 Frost Hollow Road, Easton, PA 18040" />
+                            </div>
+                        </div>
+
+                        <div id="online-fields" hidden>
+                            <div class="submit-field">
+                                <label for="zoom_link">Zoom link</label>
+                                <input type="url" id="zoom_link" name="zoom_link" placeholder="https://zoom.us/j/..." />
+                                <p class="submit-help">Leave blank if the link should stay private. People can
+                                    request it by registering.</p>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- DESCRIPTION + PHOTO -->
+                    <fieldset class="submit-card">
+                        <legend>Description and photo</legend>
+
+                        <div class="submit-field">
+                            <label for="description">About the event <span class="req">*</span></label>
+                            <textarea id="description" name="description" rows="6" required maxlength="1500"
+                                placeholder="What's happening, who it's for, and anything guests should know (cost, RSVP deadline, food, parking)."></textarea>
+                            <p class="submit-help">Leave a blank line between paragraphs.</p>
+                        </div>
+
+                        <div class="submit-field">
+                            <label for="photo">Event photo or flyer <span class="req">*</span></label>
+                            <input type="file" id="photo" name="photo" accept="image/jpeg,image/png,image/webp"
+                                required />
+                            <p class="submit-help">JPG or PNG, under 5 MB. A wide (landscape) image looks best on the
+                                site. Tall flyers work too, but they get cropped on some cards.</p>
+                            <p class="submit-error" id="photo-error" hidden></p>
+                        </div>
+
+                        <div class="submit-field">
+                            <label for="register_url">Registration link (optional)</label>
+                            <input type="url" id="register_url" name="register_url"
+                                placeholder="https://forms.gle/..." />
+                            <p class="submit-help">If left blank, "Register Now" opens an email to
+                                eastonshul@gmail.com.</p>
+                        </div>
+                    </fieldset>
+
+                    <!-- SUBMITTER -->
+                    <fieldset class="submit-card">
+                        <legend>About you</legend>
+
+                        <div class="row g-3">
+                            <div class="col-md-6 submit-field">
+                                <label for="submitter_name">Your name <span class="req">*</span></label>
+                                <input type="text" id="submitter_name" name="submitter_name" required />
+                            </div>
+                            <div class="col-md-6 submit-field">
+                                <label for="submitter_email">Your email <span class="req">*</span></label>
+                                <input type="email" id="submitter_email" name="submitter_email" required />
+                            </div>
+                        </div>
+
+                        <div class="submit-field">
+                            <label for="notes">Notes for the reviewer (not shown on the site)</label>
+                            <textarea id="notes" name="notes" rows="3"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <p class="submit-error" id="form-error" hidden></p>
+
+                    <button type="submit" class="btn event-register-btn submit-btn" id="submit-btn">
+                        Submit for Review
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            var MAX_MB = 5;
+            var form = document.getElementById("event-form");
+            var success = document.getElementById("submit-success");
+            var formError = document.getElementById("form-error");
+            var photoError = document.getElementById("photo-error");
+            var photo = document.getElementById("photo");
+            var button = document.getElementById("submit-btn");
+
+            function showSuccess() {
+                form.hidden = true;
+                success.hidden = false;
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+
+            // Fallback when JavaScript submit isn't used
+            if (new URLSearchParams(location.search).get("sent") === "1") showSuccess();
+
+            // Show the right location fields
+            var inPerson = document.getElementById("in-person-fields");
+            var online = document.getElementById("online-fields");
+            form.querySelectorAll('input[name="location_type"]').forEach(function (radio) {
+                radio.addEventListener("change", function () {
+                    var isOnline = form.location_type.value === "online";
+                    online.hidden = !isOnline;
+                    inPerson.hidden = isOnline;
+                });
+            });
+
+            // Check photo size before uploading
+            photo.addEventListener("change", function () {
+                var file = photo.files[0];
+                var tooBig = file && file.size > MAX_MB * 1024 * 1024;
+                photoError.hidden = !tooBig;
+                photoError.textContent = tooBig
+                    ? "This photo is " + (file.size / 1024 / 1024).toFixed(1) + " MB. Please use one under " + MAX_MB + " MB."
+                    : "";
+                photo.setCustomValidity(tooBig ? "Photo too large" : "");
+            });
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                formError.hidden = true;
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+                button.disabled = true;
+                button.textContent = "Submitting…";
+
+                fetch("/", { method: "POST", body: new FormData(form) })
+                    .then(function (res) {
+                        if (!res.ok) throw new Error(res.status);
+                        showSuccess();
+                    })
+                    .catch(function () {
+                        formError.hidden = false;
+                        formError.textContent = "Something went wrong. Please try again, or email the details to eastonshul@gmail.com.";
+                        button.disabled = false;
+                        button.textContent = "Submit for Review";
+                    });
+            });
+        })();
+    </script>
+</body>
+
+</html>

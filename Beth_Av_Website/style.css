@@ -2766,3 +2766,173 @@ html, body {
   color: rgba(11, 15, 20, 0.68);
   margin: 0;
 }
+
+/* =========================
+   SUBMIT AN EVENT (staff form)
+========================= */
+.submit-section {
+  background: #ffffff;
+  padding: 60px 0 90px;
+}
+
+.submit-wrap {
+  max-width: 760px;
+}
+
+.submit-title {
+  font-size: clamp(2.2rem, 3.4vw, 3rem);
+  font-weight: 500;
+  color: #0b0f14;
+  margin: 0 0 12px;
+}
+
+.submit-intro {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(11, 15, 20, 0.75);
+  margin: 0 0 36px;
+}
+
+.submit-card {
+  background: #f4efe7;
+  border: 0;
+  border-radius: 16px;
+  padding: 28px;
+  margin: 0 0 24px;
+}
+
+.submit-card legend {
+  float: none;
+  width: auto;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #0b0f14;
+  margin: 0 0 18px;
+  padding: 0;
+}
+
+.submit-field {
+  margin-bottom: 18px;
+}
+
+.submit-field:last-child {
+  margin-bottom: 0;
+}
+
+.submit-field label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0b0f14;
+  margin-bottom: 6px;
+}
+
+.submit-field .req {
+  color: #a3361f;
+}
+
+.submit-field input[type="text"],
+.submit-field input[type="email"],
+.submit-field input[type="url"],
+.submit-field input[type="date"],
+.submit-field input[type="time"],
+.submit-field input[type="file"],
+.submit-field select,
+.submit-field textarea {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(11, 15, 20, 0.18);
+  border-radius: 10px;
+  padding: 11px 14px;
+  font: inherit;
+  font-size: 1rem;
+  color: #0b0f14;
+}
+
+.submit-field textarea {
+  resize: vertical;
+}
+
+.submit-field input:focus,
+.submit-field select:focus,
+.submit-field textarea:focus {
+  outline: 2px solid #351C42;
+  outline-offset: 1px;
+  border-color: #351C42;
+}
+
+.submit-help {
+  font-size: 0.85rem;
+  color: rgba(11, 15, 20, 0.65);
+  margin: 6px 0 0;
+}
+
+.submit-error {
+  font-size: 0.9rem;
+  color: #a3361f;
+  font-weight: 500;
+  margin: 6px 0 0;
+}
+
+.submit-radios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.submit-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(11, 15, 20, 0.18);
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.submit-radio input {
+  accent-color: #351C42;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px 22px;
+  font-size: 1.05rem;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+}
+
+.submit-success {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: #f4efe7;
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.submit-success .material-symbols-outlined {
+  font-size: 32px;
+  color: #351C42;
+}
+
+.submit-success h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.submit-success p {
+  margin: 0 0 10px;
+  color: rgba(11, 15, 20, 0.75);
+}
+
+.submit-again {
+  color: #351C42;
+  font-weight: 600;
+}
