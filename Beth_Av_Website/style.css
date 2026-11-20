@@ -2749,3 +2749,13 @@ html, body {
     padding: 20px;
   }
 }
+
+/* Learn More sits at the bottom of each events page card */
+.event-feature-content .event-link {
+  padding-top: 24px;
+}
+
+/* Tall flyers: keep the top (title) visible when cropped */
+.event-feature-img {
+  object-position: center top;
+}
