@@ -18,5 +18,24 @@
       "[Anything guests should know: cost or free, RSVP deadline, kosher supervision, parking.]"
     ],
     "registerUrl": ""
+  },
+  {
+    "id": "hanukkah-party-2026-12-10",
+    "title": "Hanukkah Party",
+    "tag": "Holiday",
+    "date": "2026-12-10",
+    "time": "6:00 PM",
+    "location": {
+      "type": "in-person",
+      "name": "Beth Avraham",
+      "address": "1424 Frost Hollow Road, Easton, PA 18040"
+    },
+    "image": "images/events/hanukkah-party-2026-12-10.png",
+    "imageAlt": "Hanukkah Party",
+    "imageFit": "cover",
+    "description": [
+      "Hanukkah Party at Beth Avraham (The Easton Shul)! ✨ ​Join us for an evening of Torah, fellowship, and Hanukkah celebration! ​📅 Date: December 10, 2026 🕕 Time: 6:00 PM 📍 Location: 1424 Frost Hollow Road, Easton, PA 18040 ​Scan the QR code on the flyer to RSVP—we can’t wait to celebrate together! 🕯️💙"
+    ],
+    "registerUrl": ""
   }
 ]
