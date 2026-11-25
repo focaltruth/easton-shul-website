@@ -7,6 +7,8 @@
      #event-detail     event.html detail page (?id=...)
      #upcoming-events  "Upcoming Events" cards at the bottom of event.html
    Past events disappear from the lists automatically.
+   Upcoming events with no registerUrl get a built-in RSVP form
+   (Netlify form "event-rsvp"; its hidden copy lives in event.html).
 ========================================================= */
 (function () {
   const EVENTS_URL = "data/events.json";
@@ -61,7 +63,7 @@
     return `<span class="material-symbols-outlined" aria-hidden="true">${name}</span>`;
   }
 
-    // Clean links on the live site (/events/hanukkah-2026).
+  // Clean links on the live site (/events/hanukkah-2026).
   // Live Server can't do Netlify rewrites, so local testing uses event.html?id=...
   const IS_LOCAL = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
 
@@ -105,6 +107,12 @@
   function paragraphs(description) {
     if (Array.isArray(description)) return description;
     return String(description || "").split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean);
+  }
+
+  // Built-in RSVP form: upcoming one-off events with no outside link.
+  // Add "rsvp": false to an event in events.json to turn it off.
+  function usesRsvpForm(item) {
+    return item.kind === "event" && item.rsvp !== false && !safeUrl(item.registerUrl);
   }
 
   function registerHref(item) {
@@ -252,8 +260,9 @@
     const isPast = item.kind === "event" && item.dateObj && item.dateObj < today();
     const fitClass = item.imageFit === "contain" ? " is-flyer" : "";
     const bg = safeColor(item.imageBg);
-    const register = registerHref(item);
-    const registerLabel = item.registerLabel || "Register Now";
+    const rsvp = !isPast && usesRsvpForm(item);
+    const register = rsvp ? "#rsvp" : registerHref(item);
+    const registerLabel = item.registerLabel || (rsvp ? "RSVP Now" : "Register Now");
 
     return `
       <a href="events.html" class="member-back">
@@ -292,8 +301,10 @@
       <section class="event-detail-about">
         <h2>${item.kind === "class" ? "About this class" : "About this event"}</h2>
         ${paragraphs(item.description).map(function (p) { return `<p>${esc(p)}</p>`; }).join("")}
-        ${isPast ? "" : `<a href="${esc(register)}" class="btn event-register-btn">${esc(registerLabel)}</a>`}
+        ${isPast || rsvp ? "" : `<a href="${esc(register)}" class="btn event-register-btn">${esc(registerLabel)}</a>`}
       </section>
+
+      ${rsvp ? rsvpHTML(item) : ""}
 
       <section class="event-detail-questions">
         <span class="event-detail-questions-icon">${icon("mail")}</span>
@@ -302,6 +313,115 @@
           <p>Email us at <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a></p>
         </div>
       </section>`;
+  }
+
+  /* ---------- RSVP form ---------- */
+
+  function rsvpHTML(item) {
+    return `
+      <section class="event-rsvp" id="rsvp" aria-labelledby="rsvp-title">
+        <h2 id="rsvp-title">RSVP</h2>
+        <p class="event-rsvp-intro">Let us know you’re coming so we can plan food and seating.</p>
+
+        <form name="event-rsvp" method="POST" class="event-rsvp-form" id="rsvp-form" novalidate>
+          <input type="hidden" name="form-name" value="event-rsvp">
+          <input type="hidden" name="event_id" value="${esc(item.id)}">
+          <input type="hidden" name="event_title" value="${esc(item.title)}">
+          <input type="hidden" name="event_date" value="${esc(item.date || "")}">
+          <p class="rsvp-hp" aria-hidden="true">
+            <label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
+
+          <div class="rsvp-grid">
+            <div class="rsvp-field">
+              <label for="rsvp-name">Full name <span class="req">*</span></label>
+              <input type="text" id="rsvp-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="rsvp-field">
+              <label for="rsvp-email">Email <span class="req">*</span></label>
+              <input type="email" id="rsvp-email" name="email" autocomplete="email" required>
+            </div>
+            <div class="rsvp-field">
+              <label for="rsvp-phone">Phone <span class="rsvp-optional">(optional)</span></label>
+              <input type="tel" id="rsvp-phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="rsvp-field rsvp-field-pair">
+              <div>
+                <label for="rsvp-adults">Adults <span class="req">*</span></label>
+                <input type="number" id="rsvp-adults" name="adults" min="1" max="30" value="1" required>
+              </div>
+              <div>
+                <label for="rsvp-kids">Kids</label>
+                <input type="number" id="rsvp-kids" name="kids" min="0" max="30" value="0">
+              </div>
+            </div>
+            <div class="rsvp-field rsvp-field-full">
+              <label for="rsvp-notes">Anything we should know? <span class="rsvp-optional">(allergies, questions)</span></label>
+              <textarea id="rsvp-notes" name="notes" rows="3"></textarea>
+            </div>
+          </div>
+
+          <p class="rsvp-error" id="rsvp-error" role="alert" hidden></p>
+          <button type="submit" class="btn event-register-btn rsvp-submit">Send RSVP</button>
+        </form>
+
+        <div class="rsvp-success" id="rsvp-success" tabindex="-1" hidden>
+          ${icon("check_circle")}
+          <div>
+            <h3>You’re on the list!</h3>
+            <p>Thanks for letting us know. See you at ${esc(item.title)}.
+              If your plans change, email <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.</p>
+          </div>
+        </div>
+      </section>`;
+  }
+
+  function setupRsvp() {
+    const form = document.getElementById("rsvp-form");
+    if (!form) return;
+    const errorEl = document.getElementById("rsvp-error");
+    const successEl = document.getElementById("rsvp-success");
+    const button = form.querySelector(".rsvp-submit");
+
+    function showError(text) {
+      errorEl.textContent = text;
+      errorEl.hidden = false;
+    }
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      errorEl.hidden = true;
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      if (IS_LOCAL) {
+        showError("RSVPs only send on the live site (Netlify). The form looks right — test it on eastonshul.com.");
+        return;
+      }
+
+      button.disabled = true;
+      button.textContent = "Sending…";
+
+      try {
+        const res = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(new FormData(form)).toString()
+        });
+        if (!res.ok) throw new Error("Status " + res.status);
+        form.hidden = true;
+        successEl.hidden = false;
+        successEl.focus();
+      } catch (err) {
+        console.warn("RSVP:", err);
+        showError("Sorry, your RSVP didn’t go through. Please try again, or email " + CONTACT_EMAIL + ".");
+        button.disabled = false;
+        button.textContent = "Send RSVP";
+      }
+    });
   }
 
   function notFoundHTML() {
@@ -344,6 +464,7 @@
       currentId = currentEventId();
       const item = data.all.find(function (i) { return i.id === currentId; });
       detailEl.innerHTML = item ? detailHTML(item) : notFoundHTML();
+      setupRsvp();
       if (item) {
         document.title = item.title + " | Easton Shul";
         const meta = document.querySelector('meta[name="description"]');

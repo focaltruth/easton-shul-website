@@ -1192,9 +1192,6 @@ html, body {
   }
 }
 
-
-
-
 /* =========================
    FOOTER
 ========================= */
@@ -1205,18 +1202,23 @@ html, body {
   overflow: hidden;
 }
 
-.footer-top{
-  row-gap:32px;
+/* 3 columns on desktop */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 48px;
 }
 
-/* Brand */
+/* Column 1: logo + Donate */
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .footer-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: #ffffff;
-  margin-bottom: 18px;
+  display: inline-block;
+  margin-bottom: 22px;
 }
 
 .footer-logo {
@@ -1225,124 +1227,40 @@ html, body {
   display: block;
 }
 
-/* Description */
-.footer-desc {
-  margin: 0 0 20px;
-  line-height: 1.6;
-  color: #b29fbc;
-  font-weight: 400;
-  font-size: 0.875rem;
-}
-
-/* =========================
-   CONTACT BLOCKS
-   (matches your HTML: block/head/rule/value)
-========================= */
-
-/* You are using a Bootstrap .row for footer-contact. Don't turn it into CSS grid. */
-.footer-contact {
-  margin-bottom: 26px;
-}
-
-/* Header row: icon + label aligned */
-.footer-contact-head {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 6px;
-}
-
-.footer-contact-head .material-symbols-outlined {
-  font-size: 18px;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-}
-
-.footer-contact-title {
-  font-size: 0.95rem;
-}
-
-/* Divider line under label */
-.footer-contact-rule {
-  height: 1px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.18);
-  margin: 10px 0 12px;
-}
-
-/* Value link */
-.footer-contact-value {
-  display: inline-block;
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
-  font-size: 0.95rem;
-  white-space: nowrap; /* keeps phone number on one line */
-}
-
-.footer-contact-value:hover {
-  color: #f3cf69;
-}
-
-/* MOBILE: keep Email + Phone on the same row */
-@media (max-width: 575.98px) {
-  .footer-contact {
-    display: flex;
-    gap: 24px;
-  }
-
-  .footer-contact > div {
-    flex: 1;
-  }
-}
-
-
-/* =========================
-   CTA BUTTON
-========================= */
 .footer-cta {
-  margin-top: 26px;
   background: #f3cf69;
   color: #1a1a1a;
   font-weight: 600;
+  border: 0;
   border-radius: 10px;
   padding: 12px 18px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
-
-  /* prevents full-width stretching inside flex-column */
-  align-self: flex-start;
-  width: fit-content;
 }
 
-.footer-cta:hover {
+.footer-cta:hover,
+.footer-cta:focus {
   background: #eac25b;
   color: #111111;
 }
 
-/* RIGHT SIDE LAYOUT (desktop) */
-.footer-right-col {
-  display: flex;
-  justify-content: flex-end;
+.footer-cta .material-symbols-outlined {
+  font-size: 18px;
+  line-height: 1;
 }
 
-.footer-right-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+/* Column headings */
+.footer-col-title {
+  color: #f3cf69;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 8px 0 16px;
 }
 
-.footer-links-col {
- margin-bottom: 180px;
-}
-
-/* =========================
-   FOOTER LINKS
-========================= */
+/* Links */
 .footer-list {
   list-style: none;
   padding: 0;
@@ -1363,16 +1281,32 @@ html, body {
   text-decoration: underline;
 }
 
-/* =========================
-   SOCIAL ICONS (IMAGES)
-========================= */
-.footer-social {
+/* Email */
+.footer-email {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+  word-break: break-word;
+}
 
-  /* nudges socials to visually line up with CTA height */
-  margin-bottom: 26px;
+.footer-email .material-symbols-outlined {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.footer-email:hover {
+  color: #f3cf69;
+}
+
+/* Social icons */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .footer-social-btn {
@@ -1396,13 +1330,11 @@ html, body {
   display: block;
 }
 
-/* =========================
-   DIVIDER + BOTTOM
-========================= */
+/* Divider + bottom bar */
 .footer-divider {
   height: 1px;
   background: rgba(255, 255, 255, 0.12);
-  margin: 34px 0 18px;
+  margin: 40px 0 18px;
 }
 
 .footer-bottom {
@@ -1415,49 +1347,31 @@ html, body {
   color: rgba(255, 255, 255, 0.65);
 }
 
-.footer-copy,
-.footer-credit {
-  white-space: nowrap;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
+/* Tablet: logo column on top, links + contact side by side */
 @media (max-width: 991.98px) {
   .site-footer {
     padding-top: 55px;
   }
 
-  .footer-copy,
-  .footer-credit {
-    white-space: normal;
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
   }
 
-  /* allow phone/email to wrap on very small screens if needed */
-  .footer-contact-value {
-    white-space: normal;
-  }
-
-  .footer-social {
-    margin-bottom: 0;
+  .footer-brand-col {
+    grid-column: 1 / -1;
   }
 }
 
-@media (max-width: 991.98px) {
-  .footer-right-col {
-    justify-content: flex-start;
+/* Phone: everything stacked */
+@media (max-width: 575.98px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .footer-right-inner {
-    align-items: flex-start;
-  }
-
-  .footer-links-col {
-    margin-bottom: 32px;
-  }
-
-  .footer-list {
-    text-align: left;
+  .footer-logo {
+    height: 96px;
   }
 }
 
@@ -3058,4 +2972,161 @@ html, body {
 
 .fn-back:hover {
   text-decoration: underline;
+}
+
+/* =========================
+   EVENT RSVP FORM
+========================= */
+.event-rsvp {
+  max-width: 760px;
+  margin-top: 48px;
+  background: #f4efe7;
+  border-radius: 16px;
+  padding: 32px 28px;
+  scroll-margin-top: 24px;
+}
+
+.event-rsvp h2 {
+  font-size: clamp(1.6rem, 2.4vw, 1.9rem);
+  font-weight: 500;
+  color: #0b0f14;
+  margin: 0 0 6px;
+}
+
+.event-rsvp-intro {
+  font-size: 1.05rem;
+  color: rgba(11, 15, 20, 0.75);
+  margin: 0 0 24px;
+}
+
+.rsvp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+}
+
+.rsvp-field-full {
+  grid-column: 1 / -1;
+}
+
+.rsvp-field-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.rsvp-field label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0b0f14;
+  margin-bottom: 6px;
+}
+
+.rsvp-field .req {
+  color: #a3361f;
+}
+
+.rsvp-optional {
+  font-weight: 400;
+  color: rgba(11, 15, 20, 0.6);
+}
+
+.rsvp-field input,
+.rsvp-field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(11, 15, 20, 0.18);
+  border-radius: 10px;
+  padding: 11px 14px;
+  font: inherit;
+  font-size: 1rem;
+  color: #0b0f14;
+}
+
+.rsvp-field textarea {
+  resize: vertical;
+}
+
+.rsvp-field input:focus,
+.rsvp-field textarea:focus {
+  outline: 2px solid #351C42;
+  outline-offset: 1px;
+  border-color: #351C42;
+}
+
+/* Spam trap: hidden from people, bots fill it in */
+.rsvp-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.rsvp-error {
+  color: #a3361f;
+  font-weight: 500;
+  margin: 18px 0 0;
+}
+
+.rsvp-submit {
+  margin-top: 22px;
+  min-width: 200px;
+}
+
+.rsvp-submit:disabled {
+  opacity: 0.7;
+}
+
+/* Keep hidden things hidden even before the page finishes styling */
+.event-rsvp [hidden] {
+  display: none !important;
+}
+
+.rsvp-success {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 22px;
+  outline: none;
+}
+
+.rsvp-success .material-symbols-outlined {
+  font-size: 32px;
+  color: #351C42;
+}
+
+.rsvp-success h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.rsvp-success p {
+  margin: 0;
+  color: rgba(11, 15, 20, 0.75);
+  line-height: 1.6;
+}
+
+.rsvp-success a {
+  color: #351C42;
+  font-weight: 600;
+}
+
+@media (max-width: 575.98px) {
+  .event-rsvp {
+    padding: 24px 18px;
+  }
+
+  .rsvp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rsvp-submit {
+    width: 100%;
+  }
 }
